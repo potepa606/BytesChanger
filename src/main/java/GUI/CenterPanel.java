@@ -85,10 +85,22 @@ public class CenterPanel extends JPanel {
 
 //                    WriterByte writerByte = new WriterByte(plikDOtestu, readerByte.getByteFile());
                     statusPath.setText("Lokalizacja" + " -- OK ! \t Znaleziono: " + checkingPath.getSelectFiles().size() + " file/s o rozszerzeniu: " + extension);
-                    addBytesPanel.ON_AddBytesPanel(true);
-                    addActionsPanel.ON_ActionsPanel(true);
 
-                    addActionsPanel.getChangeButt().setEnabled(false);
+                   if(checkingPath.getSelectFiles().size() != 0){
+                       addBytesPanel.ON_AddBytesPanel(true);
+                       addActionsPanel.ON_ActionsPanel(true);
+
+                       addActionsPanel.getChangeButt().setEnabled(false);
+                   }else{
+                       addBytesPanel.ON_AddBytesPanel(false);
+                       addActionsPanel.ON_ActionsPanel(false);
+
+                   }
+
+
+
+
+
                 }
                 else{
                     statusPath.setText("Taka ścieżka nie istnieje !");
